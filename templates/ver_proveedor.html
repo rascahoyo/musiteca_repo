@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+
+{% block contenido%}
+<table class="table table-striped table-dark">
+	  	<thead>
+		<h1>PROVEEDOR</h1>
+		</thead>
+	    <tr>
+	      <th scope="col">Nombres</th>
+	      <th scope="col">Nit</th>
+	      <th scope="col"></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>{{i.nombre}}</td>
+	      <td>{{i.nit}}</td>
+	      <td>
+			<a class="btn btn-outline-light" href="/editar_proveedor/{{i.id}}" method="get">Editar</a>
+      		<a class="btn btn-outline-secondary" href="/eliminar_proveedor/{{i.id}}" method="get">Eliminar</a>
+		  </td>
+	    </tr>
+	  </tbody>
+	</table>
+	
+	<br><a class="btn btn-success" href="{% url 'vista_lista_proveedor' %}" "email me">Regresar a la lista</a>
+{% endblock %}

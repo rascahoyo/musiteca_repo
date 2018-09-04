@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+
+{% block titulo%}
+	REGISTRAR USUARIO
+{% endblock%}
+
+{% block contenido%}
+	<h2>{{msj}}</h2>
+	<form class="form-signin" id="register" method="POST">
+	<div class="shadow-lg p-3 mb-5 bg-white rounded">
+      <div class="text-center mb-4">
+        <img class="mb-4" src="/static/imagenes/musiteca.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Ingresa a la Musiteca</h1>
+      </div>
+      <div class="form-label-group">
+       	{% csrf_token %}
+		{{ formulario.as_p}}
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" value="Registrarse">Ingresar</button>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; OAMC-2018</p>
+	</div>
+	</form>
+{% endblock %}

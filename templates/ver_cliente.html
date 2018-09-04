@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+
+{% block contenido%}
+<table class="table table-striped table-dark">
+	  	<thead>
+		<h1>CLIENTE</h1>
+		</thead>
+	    <tr>
+	      <th scope="col">Nombres</th>
+	      <th scope="col">Apellidos</th>
+	      <th scope="col">Identificacion</th>
+	      <th scope="col">Direccion</th>
+	      <th scope="col"></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>{{i.nombre}}</td>
+	      <td>{{i.apellido}}</td>
+	      <td>{{i.identificacion}}</td>
+	      <td>{{i.direccion}}</td>
+	      <td>
+			<a class="btn btn-outline-light" href="/editar_cliente/{{i.id}}" method="get">Editar</a>
+      		<a class="btn btn-outline-secondary" href="/eliminar_cliente/{{i.id}}" method="get">Eliminar</a>
+	      </td>
+	    </tr>
+	  </tbody>
+	</table>
+	<br>
+	<a class="btn btn-success" href="{% url 'vista_lista_cliente' %}" "email me">Regresar a la lista</a>
+{% endblock %}

@@ -1,0 +1,134 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/estilo.css">
+    <link rel="icon" href="{% static 'imagenes/musiteca.png' %}">
+    <title>Musiteca</title>
+
+  </head>
+  <body >
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+<nav class="navbar navbar-dark bg-dark ">
+<input type=image class="d-inline-block align-top img-fluid" src="/static/imagenes/musiteca.png" width="100" height="100">
+<a class="navbar-brand" href="/" id="titulo">
+    MUSITECA
+  </a>
+
+
+    
+
+    
+    {% if request.user.is_authenticated and request.user.is_superuser %}
+
+    <ul class="nav nav-pills nav-fill" >
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Instrumentos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/agregar_instrumento/">Agregar instrumentos</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/lista_instrumento">Lista de instrumentos</a>
+        </div>
+      </li>
+
+    <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Proveedor
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/agregar_proveedor/">Agregar proveedor</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/lista_proveedor">Lista de proveedor</a>
+            </div>
+          </li>
+
+    <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Marca
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/agregar_marca/">Agregar marca</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/lista_marca">Lista de marca</a>
+            </div>
+          </li>
+
+    <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Vendedor
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/agregar_vendedor/">Agregar vendedor</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/lista_vendedor">Lista de vendedor</a>
+            </div>
+          </li>
+
+    <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Cliente
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/agregar_cliente/">Agregar cliente</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/lista_cliente">Lista de cliente</a>
+            </div>
+          </li>
+
+    <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Facturas
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/agregar_factura/">Agregar factura</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/lista_factura">Lista de factura</a>
+            </div>
+          </li>
+        <button type="button" class="btn btn-danger" onclick="location.href='{% url 'vista_logout' %}'">Cerrar Cesion</button>
+    {% elif request.user.is_authenticated %}
+    <ul class="nav nav-pills nav-fill" >
+      <button type="button" class="btn btn-light" onclick="location.href='{% url 'vista_lista_instrumento' %}'">Ver Productos</button>
+      
+      <button type="button" class="btn btn-danger" onclick="location.href='{% url 'vista_logout' %}'">Cerrar Cesion</button>
+
+    </ul>
+
+    {% else %}
+    <ul class="nav nav-pills nav-fill" >
+      <button type="button" class="btn btn-light" onclick="location.href='{% url 'vista_lista_instrumento' %}'">Ver Productos</button>
+    <button type="button" class="btn btn-outline-info"  onclick="location.href='/perfil'">Registrarse</button>
+        <button type="button" class="btn btn-secondary" onclick="location.href='{% url 'vista_login' %}'">Ingresar</button>
+        </ul>
+    {% endif %}
+</ul>
+
+</nav>
+
+    {% block titulo %}
+        
+    {% endblock %} 
+
+    <div class="container">
+      
+    {% block contenido %}
+    {% endblock contenido %} 
+    </div>
+    
+  
+  </body>
+</html>

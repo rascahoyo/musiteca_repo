@@ -1,0 +1,136 @@
+.bg-dark{
+	background-color: #2F4247!important;
+	}
+a{
+	color: #0BA5B9;
+}
+.w-100 {
+    width: 100%!important;
+}
+.img-fluid {
+    max-width: 100%;
+    height: 100%;
+}
+.form-control {
+	background-color: #1578946e;  
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    line-height: 1.5;
+    color: #495057;
+    cursor: text;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    transition: all 1s ease-in-out;
+}
+.form-signin {
+    width: 100%;
+    max-width: 420px;
+    padding: 15px;
+    margin: auto;
+    color: #041452;
+}
+.p-3 {
+    padding: 1rem!important;
+}
+.mb-5, .my-5 {
+    margin-bottom: 3rem!important;
+}
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
+.rounded {
+    border-radius: .25rem!important;
+}
+.bg-white {
+    background-color: #ffff!important;
+}
+.btn-primary {
+    color: #042b12;
+    background-color: #688672ba;
+    border-color: #0d0e0e;
+}
+body{
+	background-color: #000D0D;
+
+}
+.container{
+	background-color: #000D0D;
+	margin: auto;
+    size: 100%;
+}
+h1{
+	color: #ADFFEB;
+    text-align: center;
+    ma
+}
+h6{
+    color: #17a2b8;
+}
+p {
+    color: #007bff;
+    font-size: 15px;
+}
+.navbar-dark .navbar-brand {
+    color: #0E8DFF;
+}
+.navbar-brand {
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 2.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    font-family: cursive;
+}
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: blue;
+    text-align: inherit;
+    white-space: normal;
+    background-color: #fff;
+    border: 0;
+}
+.piepag{
+    background-color: #000;
+    align-content: center; 
+}
+.btn-outline-dark {
+    color: red;
+    background-color: transparent;
+    background-image: none;
+    border-color: red;
+    margin-left: 500px;
+}
+.table {
+    border: none;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0rem;
+    background-color: transparent;
+    border-color: red;
+}
+i{
+    color: #001A2E;
+}
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    color: #000303;
+    background-color: #CFEDED;
+}
+.table-dark {
+    color: #3F51B5;
+    background-color: #001427;
+}
+.col{
+    color: #3F51B5;
+}

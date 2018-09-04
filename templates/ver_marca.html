@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+
+
+{% block contenido%}
+<table class="table table-striped table-dark">
+	  	<thead>
+		<h1>MARCA</h1>
+		</thead>
+	    <tr>
+	      <th scope="col">Nombres</th>
+	      <th scope="col">Origen</th>
+	      <th scope="col">Tiempo Garantia</th>
+	      <th scope="col">Proveedor</th>
+	      <th scope="col"></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>{{i.nombre}}</td>
+	      <td>{{i.origen}}</td>
+	      <td>{{i.garantia}}</td>
+	      <td>{{i.proveedor}}</td>
+	      <td>
+			<a class="btn btn-outline-light" href="/editar_marca/{{i.id}}" method="get">Editar</a>
+      		<a class="btn btn-outline-secondary" href="/eliminar_marca/{{i.id}}" method="get">Eliminar</a>
+	      </td>
+	    </tr>
+	  </tbody>
+	</table>
+	<br><a class="btn btn-success" href="{% url 'vista_lista_marca' %}" "email me">Regresar a la lista</a>
+{% endblock %}

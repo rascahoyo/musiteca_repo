@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+
+{% block titulo%}
+<h1>
+	Lista de Facturas
+</h1>
+{% endblock %}
+{% block contenido%}
+	<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Fecha</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+	{% for i in lista %}
+  <tbody>
+    <tr>
+      <td>{{i.cliente}}</td>
+      <td>{{i.fecha}}</td>
+      <td><a class="btn btn-light" href="/ver_factura/{{i.id}}" method="get">Ver Factura</a></td>
+    </tr>
+  </tbody>
+	{% endfor %}
+</table>
+
+{% endblock %}

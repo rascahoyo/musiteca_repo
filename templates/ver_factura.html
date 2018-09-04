@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+
+{% block contenido%}
+	<table class="table table-striped table-dark">
+	  	<thead>
+		<h1>DETALLE FACTURA</h1>
+		</thead>
+	    <tr>
+	      <th scope="col">Cliente:</th>
+	      <th scope="col">Vendedor:</th>
+	      <th scope="col">Articulo:</th>
+	      <th scope="col">Total:</th>
+	      <th scope="col">Fecha:</th>
+	     
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>{{i.cliente}}</td>
+	      <td>{{i.vendedor}}</td>
+	      <td>{{i.instrumento}}</td>
+	      <td>{{i.total}}</td>
+	      <td>{{i.fecha}}</td>
+	    </tr>
+	  </tbody>
+	</table>
+	<br><a class="btn btn-success" href="{% url 'vista_lista_factura' %}" "email me">Regresar a la lista</a>
+	
+{% endblock %}

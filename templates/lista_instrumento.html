@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+
+{% block titulo%}
+<h1>
+	Lista de Instrumentos
+</h1>
+{% endblock %}
+{% block contenido%}
+	<div class="row">
+	{% for i in lista %}
+	<div class="col-4">
+	<div class="card" style="width: 18rem;">
+	  <img class="card-img-top img-fluid" src="/media/{{i.foto}}">
+	  <div class="card-body">
+	    <h5 class="card-title">{{i.nombre}}</h5>
+	    <p class="card-text">
+	    	Precio: <br>
+	    	<i>{{i.precio}}</i><br>
+	    	Descripcion:<br>
+			<i>{{i.descripcion|truncatechars:35}}</i><br>
+			Marca:<br>
+			<i>{{i.marca}}</i><br>
+		</p>
+		{% if request.user.is_authenticated and request.user.is_superuser %}
+	    <div class="btn-group" role="group" aria-label="Basic example">
+      	<a  class="btn btn-outline-primary" href="/ver_instrumento/{{i.id}}" method="get">Ver Detalle</a>
+      	<a  class="btn btn-outline-danger" href="/editar_instrumento/{{i.id}}" method="get">Editar</a>
+      	<a  class="btn btn-outline-secondary" href="/eliminar_instrumento/{{i.id}}" method="get">Eliminar</a>
+		</div>
+		{% elif request.user.is_authenticated %}
+		<a  class="btn btn-outline-primary" href="/ver_instrumento/{{i.id}}" method="get">Ver Detalle</a>
+		
+		{% endif %}
+	  </div>
+	</div>
+	</div>
+	{% endfor %}
+	</div>
+	<footer>
+    		<div class="piepag">
+	      		<button type="button" class="btn btn-outline-dark"  onclick="location.href='/contacto'">Contactanos</button>
+	      		<p class="mt-5 mb-3 text-muted text-center">&copy; OAMC-2018</p>
+   		 	</div>
+  		</footer>
+
+{% endblock %}
