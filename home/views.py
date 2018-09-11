@@ -3,6 +3,9 @@ from .models import *
 from .forms import * 
 from django.contrib.auth import login,logout, authenticate
 from django.contrib.auth.models import User
+from django.http import HttpResponse
+from django.core import serializers
+
 
 # Create your views here.
 def vista_about(request):
@@ -309,3 +312,7 @@ def vista_perfil(request):
 def vista_contacto(request):
 	formulario = contacto_form()
 	return render(request, 'contacto.html', locals())
+
+def ws_instrumentos_vista(request):
+	data = serializers.serialize('json', Instrumento.objects.filter())
+	return HttpResponse(data, content_type='application/json')

@@ -46,4 +46,5 @@ urlpatterns =[
     path('logout/',vista_logout, name='vista_logout'),
     path('register/',vista_register, name='vista_register'),
     path('perfil/',vista_perfil, name='vista_perfil'),
+    path('ws/instrumentos/',ws_instrumentos_vista, name='ws_instrumentos_vista'),
 ]

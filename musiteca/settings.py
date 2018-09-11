@@ -25,7 +25,7 @@ SECRET_KEY = 'azwfhuv4n))v9colc+j9p-&$_$nrj(tw!aen72%v0x+_tx16j^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['micanquer.herokuapp.com']
 
 
 # Application definition
@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'webservices',
+    'rest_framework',
+    'gunicorn',
 ]
 
 MIDDLEWARE = [
@@ -119,7 +122,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT='static'
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
