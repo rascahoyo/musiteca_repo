@@ -1,1 +1,1 @@
-web: gunicorn.musiteca.wsgi -b 0.0.0.0:$PORT
+web: gunicorn musiteca.wsgi -b 0.0.0.0:$PORT
