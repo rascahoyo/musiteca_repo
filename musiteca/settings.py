@@ -88,10 +88,10 @@ WSGI_APPLICATION = 'musiteca.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd1jneupor6hn9e',
-        'USER': 'hkvwrrifjkifcn',
-        'PASSWORD': 'a57635f85b5be7b945eef615a8e362c646cd3897fe4a63a9de0b2e536b58d8be',
-        'HOST': 'ec2-107-22-221-60.compute-1.amazonaws.com',
+        'NAME': 'ddnitp2hps1ml3',
+        'USER': 'rnslkgmlwlbdxx',
+        'PASSWORD': '8546e4af0dcd4d4d40b07aa977a0c996506c73dc7903a5ae2e4cb8bc94c24b16',
+        'HOST': 'ec2-54-83-29-34.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
