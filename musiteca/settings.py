@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'musiteca.wsgi.application'
 }'''
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgressql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd1jneupor6hn9e',
         'USER': 'hkvwrrifjkifcn',
         'PASSWORD': 'a57635f85b5be7b945eef615a8e362c646cd3897fe4a63a9de0b2e536b58d8be',
